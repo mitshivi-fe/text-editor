@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Simplistic Editor</h1>
+    <div class="styling-options">
+
+        <!-- <div>B</div>
+        <div><i>I</i></div>
+        <div><u>U</u></div> -->
+
+        <button (click)="setStyle('fontWeight', 'bold')" class="btn"><b>B</b></button>
+        <button (click)="setStyle('fontStyle', 'italic')" class="btn"><i>I</i></button>
+        <button (click)="setStyle('textDecoration', 'underline')" class="btn"><u>U</u></button>
+
+    </div>
+
+    <div class="text-editor-wrapper">
+        <div class="text-editor">
+            <textarea #myTextArea name="text" id="text-box" cols="30" rows="10" class="text-box"
+                (input)="onInputChange($event)" (keydown)="onKeyDown($event)" (paste)="onPaste($event)" aria-label="text area"></textarea>
+        </div>
+    </div>
+
+    <div class="text-summary-table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><u>Delta Type</u></th>
+                    <th><u>Delta Text</u></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let txtType of inputEventTypeAndText.reverse()"
+                    [ngClass]="{'green': txtType.typeOfTxt === 'insertion', 'red': txtType.typeOfTxt === 'deletion'}" class="txt-data">
+                    <td>{{txtType.typeOfTxt}}</td>
+                    <td>{{txtType.text}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
