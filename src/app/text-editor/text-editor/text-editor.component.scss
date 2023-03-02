@@ -6,6 +6,12 @@ button{
     margin: 0 auto;
     width: 80%;
     text-align: center;
+    .header{
+        position: sticky;
+        z-index: 2;
+        background-color: white;
+        top: 0;
+    }
 
     .styling-options{
         display: flex;
@@ -34,7 +40,7 @@ button{
   .text-summary-table{
       margin-top: 25px;
       max-height: 300px;
-      overflow: scroll;
+      overflow: auto;
       table{
           width: 100%;
           border-collapse: separate;
@@ -42,6 +48,11 @@ button{
       }
       th,td{
           width: 1%
+      }
+      thead{
+        position: sticky;
+        top: 0;
+        background-color: white;
       }
   }
 

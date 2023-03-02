@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TextEditorModule } from './text-editor/text-editor.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +11,6 @@ import { TextEditorModule } from './text-editor/text-editor.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TextEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
